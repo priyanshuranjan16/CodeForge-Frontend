@@ -1,0 +1,33 @@
+export {
+  Home,
+  PlusSquare,
+  LayoutGrid,
+  MessageCircle,
+  Zap,
+  CircleHelp as HelpCircle, // Aliasing CircleHelp to HelpCircle for compatibility
+  Settings,
+  Crown,
+  PanelLeftClose,
+  Bell,
+  Plus,
+  Mic,
+  Volume2,
+  Camera,
+  Paperclip,
+  ArrowUp,
+  MoreHorizontal,
+  ThumbsUp,
+  ThumbsDown,
+  Share2,
+  Copy,
+  Pencil,
+  ChevronDown,
+  ChevronUp,
+  Sun,
+  Moon,
+  Sparkles as AIIcon, // Aliasing Sparkles as AIIcon as requested
+  Menu,
+  X,
+  LogOut,
+} from "lucide-react";
+
