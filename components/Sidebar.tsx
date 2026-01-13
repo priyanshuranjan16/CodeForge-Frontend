@@ -93,7 +93,7 @@ export default function Sidebar({ currentChatId, onChatSelect, isOpen, onClose }
 
   const bottomNavItems = [
     { icon: Zap, label: "Pricing Plans", href: "/pricing" },
-    { icon: HelpCircle, label: "Help", href: "/help" },
+    // { icon: HelpCircle, label: "Help", href: "/help" },
     { icon: Settings, label: "Settings", href: "/settings" },
   ];
 
