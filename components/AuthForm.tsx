@@ -77,8 +77,8 @@ export default function AuthForm() {
 
   return (
     <div className="w-full max-w-md p-8 rounded-2xl bg-white/10 backdrop-blur-xl border border-white/20 shadow-2xl overflow-hidden relative">
-      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500"></div>
-      
+      <div className="absolute top-0 left-0 w-full h-1 bg-brand-cyan"></div>
+
       <div className="mb-8 text-center">
         <h2 className="text-3xl font-bold text-white mb-2 tracking-tight">
           {isLogin ? "Welcome Back" : "Create Account"}
@@ -110,7 +110,7 @@ export default function AuthForm() {
               placeholder="Enter your name"
               required={!isLogin}
               disabled={loading}
-              className="w-full px-4 py-3 rounded-xl bg-black/20 border border-white/10 text-white placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-purple-500/50 focus:border-transparent transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full px-4 py-3 rounded-xl bg-black/20 border border-white/10 text-white placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-brand-cyan/50 focus:border-transparent transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
             />
           </div>
         )}
@@ -127,7 +127,7 @@ export default function AuthForm() {
             placeholder="Enter email"
             required
             disabled={loading}
-            className="w-full px-4 py-3 rounded-xl bg-black/20 border border-white/10 text-white placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-purple-500/50 focus:border-transparent transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full px-4 py-3 rounded-xl bg-black/20 border border-white/10 text-white placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-brand-cyan/50 focus:border-transparent transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
           />
         </div>
 
@@ -144,7 +144,7 @@ export default function AuthForm() {
             required
             disabled={loading}
             minLength={isLogin ? 1 : 8}
-            className="w-full px-4 py-3 rounded-xl bg-black/20 border border-white/10 text-white placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-purple-500/50 focus:border-transparent transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full px-4 py-3 rounded-xl bg-black/20 border border-white/10 text-white placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-brand-cyan/50 focus:border-transparent transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
           />
           {!isLogin && (
             <p className="text-xs text-zinc-500 ml-1">
@@ -190,7 +190,7 @@ export default function AuthForm() {
           <button
             onClick={toggleMode}
             disabled={loading}
-            className="text-white font-medium hover:text-purple-400 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+            className="text-white font-medium hover:text-brand-cyan transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {isLogin ? "Sign up" : "Sign in"}
           </button>
