@@ -171,7 +171,7 @@ export default function ChatArea({ currentChatId, onChatCreated, onMenuClick }: 
           <div className="flex items-center gap-2 text-sm font-medium text-zinc-900 dark:text-zinc-100">
             <span className="hidden sm:inline text-zinc-500 dark:text-zinc-400">Code Generation</span>
             <span className="hidden sm:inline text-zinc-300 dark:text-zinc-600">/</span>
-            <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent font-semibold truncate max-w-[200px] sm:max-w-none">
+            <span className="text-brand-cyan font-semibold truncate max-w-[200px] sm:max-w-none">
               {currentChatId && chatTitle ? chatTitle : "New Chat"}
             </span>
           </div>
@@ -189,7 +189,7 @@ export default function ChatArea({ currentChatId, onChatCreated, onMenuClick }: 
         {/* Loading Chat State */}
         {isLoadingChat && (
           <div className="flex flex-col items-center justify-center h-full text-center space-y-6 p-6">
-            <div className="w-16 h-16 border-4 border-blue-200 border-t-blue-600 rounded-full animate-spin"></div>
+            <div className="w-16 h-16 border-4 border-brand-cyan/20 border-t-brand-cyan rounded-full animate-spin"></div>
             <div className="space-y-2">
               <h2 className="text-xl font-semibold text-zinc-700">Loading chat...</h2>
               <p className="text-sm text-zinc-500">Please wait while we fetch your messages</p>
@@ -210,7 +210,7 @@ export default function ChatArea({ currentChatId, onChatCreated, onMenuClick }: 
               <p className="text-sm text-zinc-600">{chatLoadError}</p>
               <button
                 onClick={() => currentChatId && loadChat(currentChatId)}
-                className="mt-4 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-sm font-medium transition-colors"
+                className="mt-4 px-4 py-2 bg-brand-cyan hover:bg-brand-cyan/90 text-white rounded-lg text-sm font-medium transition-colors"
               >
                 Try Again
               </button>
@@ -221,12 +221,12 @@ export default function ChatArea({ currentChatId, onChatCreated, onMenuClick }: 
         {/* Welcome State */}
         {!isLoadingChat && !chatLoadError && messages.length === 0 && !isLoading && (
           <div className="flex flex-col items-center justify-center h-full text-center space-y-8 p-6">
-            <div className="w-20 h-20 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-2xl flex items-center justify-center shadow-xl shadow-blue-300/50 animate-float">
+            <div className="w-20 h-20 bg-brand-cyan rounded-2xl flex items-center justify-center shadow-xl shadow-brand-cyan/20 animate-float">
               <AIIcon size={40} className="text-white" />
             </div>
 
             <div className="space-y-3 max-w-lg">
-              <h1 className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+              <h1 className="text-4xl font-bold text-brand-cyan">
                 Welcome, {user?.name || "Guest"}! 👋
               </h1>
               <p className="text-zinc-500 dark:text-zinc-400 text-lg leading-relaxed">
@@ -246,7 +246,7 @@ export default function ChatArea({ currentChatId, onChatCreated, onMenuClick }: 
                   }`}
               >
                 {msg.role === "assistant" && (
-                  <div className="w-8 h-8 rounded-full bg-gradient-to-br from-blue-600 to-indigo-600 flex items-center justify-center flex-shrink-0 shadow-md">
+                  <div className="w-8 h-8 rounded-full bg-brand-cyan flex items-center justify-center flex-shrink-0 shadow-md">
                     <AIIcon size={18} className="text-white" />
                   </div>
                 )}
@@ -254,7 +254,7 @@ export default function ChatArea({ currentChatId, onChatCreated, onMenuClick }: 
                 <div className={`flex-1 min-w-0 ${msg.role === "user" ? "max-w-2xl" : "max-w-full"}`}>
                   <div
                     className={`rounded-2xl p-3 md:p-4 transition-all duration-200 overflow-hidden ${msg.role === "user"
-                      ? "bg-gradient-to-r from-blue-600 to-indigo-600 text-white ml-auto shadow-lg shadow-blue-200/50"
+                      ? "bg-brand-cyan text-white ml-auto shadow-lg shadow-brand-cyan/20"
                       : "bg-gradient-to-br from-zinc-50 to-zinc-100/50 dark:from-zinc-800 dark:to-zinc-800/50 border border-zinc-200/80 dark:border-zinc-700/80 shadow-sm"
                       }`}
                   >
@@ -266,7 +266,7 @@ export default function ChatArea({ currentChatId, onChatCreated, onMenuClick }: 
                           </span>
                           <button
                             onClick={() => handleCopyCode(msg.content)}
-                            className="text-xs bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-3 py-1.5 rounded-lg transition-all duration-200 shadow-sm hover:shadow-md font-medium flex-shrink-0"
+                            className="text-white text-xs bg-brand-cyan hover:bg-brand-cyan/90 px-3 py-1.5 rounded-lg transition-all duration-200 shadow-sm hover:shadow-md font-medium flex-shrink-0"
                           >
                             Copy
                           </button>
@@ -313,13 +313,13 @@ export default function ChatArea({ currentChatId, onChatCreated, onMenuClick }: 
 
         {isLoading && (
           <div className="flex items-center gap-4 max-w-4xl mx-auto py-4 md:py-6 px-3 md:px-4 animate-fadeIn">
-            <div className="w-8 h-8 rounded-full bg-gradient-to-br from-blue-600 to-indigo-600 flex items-center justify-center shadow-md">
+            <div className="w-8 h-8 rounded-full bg-brand-cyan flex items-center justify-center shadow-md">
               <AIIcon size={18} className="text-white" />
             </div>
             <div className="flex-1">
               <div className="bg-gradient-to-br from-zinc-50 to-zinc-100/50 border border-zinc-200/80 rounded-2xl p-4 shadow-sm">
                 <div className="flex items-center gap-3">
-                  <div className="animate-spin rounded-full h-4 w-4 border-2 border-blue-600 border-t-transparent"></div>
+                  <div className="animate-spin rounded-full h-4 w-4 border-2 border-brand-cyan border-t-transparent"></div>
                   <span className="text-sm text-zinc-600 font-medium">
                     Generating code...
                   </span>
@@ -340,7 +340,7 @@ export default function ChatArea({ currentChatId, onChatCreated, onMenuClick }: 
 
       {/* Input Area */}
       <div className="p-3 md:p-6 pt-3 md:pt-4 bg-gradient-to-t from-zinc-50/50 to-transparent w-full">
-        <div className="max-w-full md:max-w-4xl mx-auto bg-white dark:bg-zinc-800 border-2 border-zinc-200 dark:border-zinc-700 hover:border-blue-300 dark:hover:border-blue-600 focus-within:border-blue-500 dark:focus-within:border-blue-500 rounded-2xl shadow-lg transition-all duration-200 p-2 flex items-end gap-2">
+        <div className="max-w-full md:max-w-4xl mx-auto bg-white dark:bg-zinc-800 border-2 border-zinc-200 dark:border-zinc-700 hover:border-brand-cyan/50 dark:hover:border-brand-cyan/50 focus-within:border-brand-cyan dark:focus-within:border-brand-cyan rounded-2xl shadow-lg transition-all duration-200 p-2 flex items-end gap-2">
           <div className="flex-1">
             <textarea
               value={prompt}
@@ -353,23 +353,23 @@ export default function ChatArea({ currentChatId, onChatCreated, onMenuClick }: 
             />
             <div className="flex items-center justify-between px-2 pb-1">
               <div className="flex items-center gap-1">
-                <button className="p-2 text-zinc-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all duration-200 hidden sm:block">
+                <button className="p-2 text-zinc-400 hover:text-brand-cyan hover:bg-brand-cyan/10 rounded-lg transition-all duration-200 hidden sm:block">
                   <Mic size={18} />
                 </button>
-                <button className="p-2 text-zinc-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all duration-200 hidden sm:block">
+                <button className="p-2 text-zinc-400 hover:text-brand-cyan hover:bg-brand-cyan/10 rounded-lg transition-all duration-200 hidden sm:block">
                   <Volume2 size={18} />
                 </button>
-                <button className="p-2 text-zinc-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all duration-200 hidden sm:block">
+                <button className="p-2 text-zinc-400 hover:text-brand-cyan hover:bg-brand-cyan/10 rounded-lg transition-all duration-200 hidden sm:block">
                   <Camera size={18} />
                 </button>
-                <button className="p-2 text-zinc-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all duration-200 hidden sm:block">
+                <button className="p-2 text-zinc-400 hover:text-brand-cyan hover:bg-brand-cyan/10 rounded-lg transition-all duration-200 hidden sm:block">
                   <Paperclip size={18} />
                 </button>
               </div>
               <select
                 value={language}
                 onChange={(e) => setLanguage(e.target.value)}
-                className="bg-gradient-to-r from-zinc-50 to-zinc-100 border border-zinc-200 text-zinc-700 text-xs rounded-lg px-2 md:px-3 py-2 outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100 transition-all cursor-pointer font-medium"
+                className="bg-gradient-to-r from-zinc-50 to-zinc-100 border border-zinc-200 text-zinc-700 text-xs rounded-lg px-2 md:px-3 py-2 outline-none focus:border-brand-cyan focus:ring-2 focus:ring-brand-cyan/10 transition-all cursor-pointer font-medium"
                 disabled={isLoading}
               >
                 <option value="python">Python</option>
@@ -386,7 +386,7 @@ export default function ChatArea({ currentChatId, onChatCreated, onMenuClick }: 
           <button
             onClick={handleGenerate}
             disabled={isLoading || !prompt.trim()}
-            className="p-3 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white rounded-xl transition-all duration-200 shadow-lg shadow-blue-200/50 hover:shadow-xl hover:shadow-blue-300/50 mb-1 disabled:opacity-50 disabled:cursor-not-allowed hover:scale-105"
+            className="p-3 bg-brand-cyan hover:bg-brand-cyan/90 text-white rounded-xl transition-all duration-200 shadow-lg shadow-brand-cyan/20 hover:shadow-xl hover:shadow-brand-cyan/30 mb-1 disabled:opacity-50 disabled:cursor-not-allowed hover:scale-105"
           >
             <ArrowUp size={20} />
           </button>
