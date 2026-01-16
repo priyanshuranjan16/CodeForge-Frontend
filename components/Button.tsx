@@ -21,7 +21,7 @@ export default function Button({
 
   const variants = {
     primary:
-      "bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg shadow-purple-500/20 hover:shadow-purple-500/40 hover:scale-[1.02]",
+      "bg-brand-cyan text-white shadow-lg shadow-brand-cyan/20 hover:shadow-brand-cyan/40 hover:scale-[1.02]",
     secondary:
       "bg-white/10 text-white hover:bg-white/20 border border-white/10",
     outline:
