@@ -111,9 +111,9 @@ export default function Sidebar({ currentChatId, onChatSelect, isOpen, onClose }
       <aside className={`
         fixed lg:relative
         w-64 h-screen 
-        bg-gradient-to-br from-zinc-50 to-zinc-100/50 dark:from-zinc-900 dark:to-zinc-800/50 
+        bg-linear-to-br from-zinc-50 to-zinc-100/50 dark:from-zinc-900 dark:to-zinc-800/50 
         border-r border-zinc-200/80 dark:border-zinc-700/80 
-        flex flex-col flex-shrink-0 backdrop-blur-sm transition-all duration-300 ease-in-out
+        flex flex-col shrink-0 backdrop-blur-sm transition-all duration-300 ease-in-out
         z-50
         ${isOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}
       `}>
@@ -192,7 +192,7 @@ export default function Sidebar({ currentChatId, onChatSelect, isOpen, onClose }
                         }`}
                     >
                       <div className="flex items-center gap-2">
-                        <MessageCircle size={14} className="flex-shrink-0" />
+                        <MessageCircle size={14} className="shrink-0" />
                         <div className="truncate flex-1">{chat.title}</div>
                       </div>
                     </button>
