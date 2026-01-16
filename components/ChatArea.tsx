@@ -157,7 +157,7 @@ export default function ChatArea({ currentChatId, onChatCreated, onMenuClick }: 
   return (
     <div className="flex-1 flex flex-col bg-white dark:bg-zinc-900 transition-colors overflow-x-hidden w-full">
       {/* Header */}
-      <header className="h-16 border-b border-zinc-100 dark:border-zinc-800 flex items-center justify-between px-4 md:px-6 flex-shrink-0 bg-white/80 dark:bg-zinc-900/80 backdrop-blur-sm transition-colors">
+      <header className="h-16 border-b border-zinc-100 dark:border-zinc-800 flex items-center justify-between px-4 md:px-6 shrink-0 bg-white/80 dark:bg-zinc-900/80 backdrop-blur-sm transition-colors">
         <div className="flex items-center gap-3">
           {/* Burger Menu Button - Only visible on mobile */}
           <button
@@ -246,7 +246,7 @@ export default function ChatArea({ currentChatId, onChatCreated, onMenuClick }: 
                   }`}
               >
                 {msg.role === "assistant" && (
-                  <div className="w-8 h-8 rounded-full bg-brand-cyan flex items-center justify-center flex-shrink-0 shadow-md">
+                  <div className="w-8 h-8 rounded-full bg-brand-cyan flex items-center justify-center shrink-0 shadow-md">
                     <AIIcon size={18} className="text-white" />
                   </div>
                 )}
@@ -255,7 +255,7 @@ export default function ChatArea({ currentChatId, onChatCreated, onMenuClick }: 
                   <div
                     className={`rounded-2xl p-3 md:p-4 transition-all duration-200 overflow-hidden ${msg.role === "user"
                       ? "bg-brand-cyan text-white ml-auto shadow-lg shadow-brand-cyan/20"
-                      : "bg-gradient-to-br from-zinc-50 to-zinc-100/50 dark:from-zinc-800 dark:to-zinc-800/50 border border-zinc-200/80 dark:border-zinc-700/80 shadow-sm"
+                      : "bg-linear-to-br from-zinc-50 to-zinc-100/50 dark:from-zinc-800 dark:to-zinc-800/50 border border-zinc-200/80 dark:border-zinc-700/80 shadow-sm"
                       }`}
                   >
                     {msg.role === "assistant" ? (
@@ -266,7 +266,7 @@ export default function ChatArea({ currentChatId, onChatCreated, onMenuClick }: 
                           </span>
                           <button
                             onClick={() => handleCopyCode(msg.content)}
-                            className="text-white text-xs bg-brand-cyan hover:bg-brand-cyan/90 px-3 py-1.5 rounded-lg transition-all duration-200 shadow-sm hover:shadow-md font-medium flex-shrink-0"
+                            className="text-white text-xs bg-brand-cyan hover:bg-brand-cyan/90 px-3 py-1.5 rounded-lg transition-all duration-200 shadow-sm hover:shadow-md font-medium shrink-0"
                           >
                             Copy
                           </button>
@@ -294,7 +294,7 @@ export default function ChatArea({ currentChatId, onChatCreated, onMenuClick }: 
                         </SyntaxHighlighter>
                       </div>
                     ) : (
-                      <p className="text-sm whitespace-pre-wrap leading-relaxed break-words overflow-wrap-anywhere">
+                      <p className="text-sm whitespace-pre-wrap leading-relaxed wrap-break-word overflow-wrap-anywhere">
                         {msg.content}
                       </p>
                     )}
@@ -302,7 +302,7 @@ export default function ChatArea({ currentChatId, onChatCreated, onMenuClick }: 
                 </div>
 
                 {msg.role === "user" && (
-                  <div className="w-8 h-8 rounded-full bg-gradient-to-br from-zinc-300 to-zinc-400 flex items-center justify-center flex-shrink-0 text-zinc-700 font-semibold text-xs shadow-md">
+                  <div className="w-8 h-8 rounded-full bg-linear-to-br from-zinc-300 to-zinc-400 flex items-center justify-center shrink-0 text-zinc-700 font-semibold text-xs shadow-md">
                     {user?.name ? user.name.charAt(0).toUpperCase() : "U"}
                   </div>
                 )}
@@ -317,7 +317,7 @@ export default function ChatArea({ currentChatId, onChatCreated, onMenuClick }: 
               <AIIcon size={18} className="text-white" />
             </div>
             <div className="flex-1">
-              <div className="bg-gradient-to-br from-zinc-50 to-zinc-100/50 border border-zinc-200/80 rounded-2xl p-4 shadow-sm">
+              <div className="bg-linear-to-br from-zinc-50 to-zinc-100/50 border border-zinc-200/80 rounded-2xl p-4 shadow-sm">
                 <div className="flex items-center gap-3">
                   <div className="animate-spin rounded-full h-4 w-4 border-2 border-brand-cyan border-t-transparent"></div>
                   <span className="text-sm text-zinc-600 font-medium">
@@ -339,7 +339,7 @@ export default function ChatArea({ currentChatId, onChatCreated, onMenuClick }: 
       )}
 
       {/* Input Area */}
-      <div className="p-3 md:p-6 pt-3 md:pt-4 bg-gradient-to-t from-zinc-50/50 to-transparent w-full">
+      <div className="p-3 md:p-6 pt-3 md:pt-4 bg-linear-to-t from-zinc-50/50 to-transparent w-full">
         <div className="max-w-full md:max-w-4xl mx-auto bg-white dark:bg-zinc-800 border-2 border-zinc-200 dark:border-zinc-700 hover:border-brand-cyan/50 dark:hover:border-brand-cyan/50 focus-within:border-brand-cyan dark:focus-within:border-brand-cyan rounded-2xl shadow-lg transition-all duration-200 p-2 flex items-end gap-2">
           <div className="flex-1">
             <textarea
@@ -369,7 +369,7 @@ export default function ChatArea({ currentChatId, onChatCreated, onMenuClick }: 
               <select
                 value={language}
                 onChange={(e) => setLanguage(e.target.value)}
-                className="bg-gradient-to-r from-zinc-50 to-zinc-100 border border-zinc-200 text-zinc-700 text-xs rounded-lg px-2 md:px-3 py-2 outline-none focus:border-brand-cyan focus:ring-2 focus:ring-brand-cyan/10 transition-all cursor-pointer font-medium"
+                className="bg-linear-to-r from-zinc-50 to-zinc-100 border border-zinc-200 text-zinc-700 text-xs rounded-lg px-2 md:px-3 py-2 outline-none focus:border-brand-cyan focus:ring-2 focus:ring-brand-cyan/10 transition-all cursor-pointer font-medium"
                 disabled={isLoading}
               >
                 <option value="python">Python</option>
