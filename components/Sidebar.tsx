@@ -88,7 +88,7 @@ export default function Sidebar({ currentChatId, onChatSelect, isOpen, onClose }
 
   const navItems = [
     { icon: Home, label: "Home", href: "/chat" },
-    { icon: LayoutGrid, label: "Templates", href: "/chat/templates" },
+    // { icon: LayoutGrid, label: "Templates", href: "/chat/templates" },
   ];
 
   const bottomNavItems = [
